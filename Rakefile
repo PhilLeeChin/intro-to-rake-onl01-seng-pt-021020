@@ -1,5 +1,10 @@
 task :environment do
   require_relative './config/environment'
+
+  desc 'drop into the Pry console'
+  task :console => :environment do
+    Pry.start
+  end
 end
 namespace :greeting do
   desc 'outputs hello to the terminal'
